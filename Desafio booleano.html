@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio booleana</title>
+    <link rel="stylesheet" href="style-desafio.css">
+</head>
+<body>
+    <div class="true-table">
+        <h1>Teste do circuito</h1>
+        <div class="box">
+            <img src="assets/img.png" alt="" width="400px" class="img">
+
+            <div class="entry-A">
+                <span>Valor da entrada A:</span>
+                <select id="sel_A">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="entry-B">
+                <span>Valor da entrada B:</span>
+                <select id="sel_B">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="entry-C">
+                <span>Valor da entrada C:</span>
+                <select id="sel_C">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="entry-D">
+                <span>Valor da entrada D:</span>
+                <select id="sel_D">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="entry-E">
+                <span>Valor da entrada E:</span>
+                <select id="sel_E">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div>
+                <button class="button" onclick="mostrar()">Verificar entradas</button>
+            </div>
+            <div class="exit">
+                <span>Sua saida é:</span>
+                <div class="msg" id="msg"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    msg.style="display: none"
+    function mostrar(){
+        var a = sel_A.value
+        var b = sel_B.value
+        var c = sel_C.value
+        var d = sel_D.value
+        var e = sel_E.value
+        if (sel_A.value == "" || sel_B.value == "" || sel_C.value == "" || sel_D.value == "" || sel_E.value == ""){
+            msg.style="display: none"
+            alert(`Selecione uma opção valida`)
+        } else {
+            if ((a==0 && b==0 && c==0 && d==0)||(a==0 && b==0 && c==0 && d ==0 && e==1)||(a==0 && b==0 && c==1 && d==0 && e==0)||(a==0 && b==0 && c==1 && d==0 && e==1)||(a==0 && b==1 && c==0 && d==0 && e==0)||(a==0 && b==1 && c==0 && d==0 && e==1)||(a==0 && b==1 && c==0 && d==1 && e==0)||(a==0 && b==1 && c==0 && d==1 && e ==1)||(a==0 && b==1 && c==1 && d==0 && e==0)||(a==0 && b==1 && c==1 && d==0 && e==1)||(a== 0 && b==1 && c==1 && d==1 && e==0)||(a==0 && b==1 && c==1 && d==1 && e==1)||(a==1 && b==0 && c==0 && d==0 && e==0)||(a==1 && b==0 && c==0 && d==0 && e==1)||(a==1 && b==0 && c==1 && d==0 &&e==0)||(a==1 && b==0 && c==1 && d==0 && e==1)||(a==1 && b==1 && c==0 && d==0 && e==0)||(a==1 && b==1 && c==0 && d==0 && e==1)||(a==1 && b==1 && c==0 && d==1 && e==0)||(a==1 && b==1 && c==0 && d==1 && e==1)||(a==1 && b==1 && c==1 && d==0 && e==0)||(a==1 && b==1 && c==1 && d==1 && e==0)||(a==1 && b==1 && c==1 && d==1 && e==1)){
+                msg.style="display: block"
+                msg.innerHTML = `1`
+            } else {
+                msg.style="display: block"
+                msg.innerHTML = `0`
+            }
+        }
+    }
+</script>
